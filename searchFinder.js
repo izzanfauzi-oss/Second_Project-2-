@@ -9,6 +9,10 @@ const container = document.getElementById("animalContainer");
 const searchInput = document.getElementById("search");
 const categoryFilter = document.getElementById("categoryFilter");
 
+// Add these two new lines:
+const dietFilter = document.getElementById("dietFilter");
+const habitatFilter = document.getElementById("habitatFilter");
+
 function displayAnimals(list) {
   container.innerHTML = "";
   list.forEach(animal => {
@@ -39,18 +43,31 @@ function filterAnimals() {
   const searchValue = searchInput.value.toLowerCase();
   const categoryValue = categoryFilter.value;
 
+// 1. Get the current values of the new dropdowns
+  const dietValue = dietFilter.value;
+  const habitatValue = habitatFilter.value;
+
   const filtered = animals.filter(animal => {
     const matchName = animal.name.toLowerCase().startsWith(searchValue);
     const matchCategory = categoryValue === "all" || animal.category === categoryValue;
+    
+    // 2. Check if the animal matches the selected diet and habitat
+    const matchDiet = dietValue === "all" || animal.diet === dietValue;
+    const matchHabitat = habitatValue === "all" || animal.habitat === habitatValue;
 
-    return matchName && matchCategory;
+    // 3. ONLY return the animal if it matches ALL the active filters!
+    return matchName && matchCategory && matchDiet && matchHabitat;
   });
 
   displayAnimals(filtered);
 }
 
-searchInput.addEventListener("input", filterAnimals);
+searchInput.addEventListener("change", filterAnimals);
 categoryFilter.addEventListener("change", filterAnimals);
+
+// Add these two new lines:
+dietFilter.addEventListener("change", filterAnimals);
+habitatFilter.addEventListener("change", filterAnimals);
 
 // Initial display
 displayAnimals(animals);
