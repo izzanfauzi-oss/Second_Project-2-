@@ -24,16 +24,18 @@
 }
 
 /* The individual member card */
+/* 1. Update the card background so it looks good on a light page */
 .portfolio-container {
   display: flex;
-  flex-direction: column; /* Stacks the picture ON TOP of the text */
+  flex-direction: column;
   align-items: center;
-  background: rgba(255, 255, 255, 0.05);
+  background: white; /* Changed from transparent to solid white */
   padding: 25px 15px;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  width: 250px; /* Fixed width so all 5 look identical */
-  transition: transform 0.2s ease; /* Smooth animation for the hover effect */
+  border: 1px solid #ddd; /* Light gray border */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Added a nice soft shadow */
+  width: 250px; 
+  transition: transform 0.2s ease; 
 }
 
 /* Small hover effect to make the cards feel interactive */
@@ -57,8 +59,9 @@
   font-size: 1.2rem;
 }
 
+/* 2. Change the detail text color to dark gray so you can read it! */
 .portfolio-details p {
   margin: 4px 0;
   font-size: 0.9rem;
-  color: #ecf0f1; 
+  color: #555; /* Changed from #ecf0f1 (white) to #555 (dark gray) */
 }
