@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang = "en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset = "UTF-8">
+  <meta name = "viewport" content="width=device-width, initial-scale=1.0">
   <title>Animal Encyclopedia</title>
   <link rel = "stylesheet" href = "searchFinder.css">
   <link rel = "stylesheet" href = "swipe-up.css">
@@ -10,7 +10,8 @@
 </head>
 <body>
 
-<div id="intro-overlay">
+  <!-- The welcoming screen that appears when the user first visits the page. -->
+<div id = "intro-overlay">
   <h1>Welcome to the Animal Encyclopedia! 🐾</h1>
   <p>(Click anywhere to enter)</p>
 </div>
@@ -19,9 +20,11 @@
   <h1>🐾 Animal Encyclopedia</h1>
 </header>
 
-<div class="controls">
-  <input type="text" id="search" placeholder="Search animal...">
+<!-- The controls for searching and filtering the animals. -->
+<div class = "controls">
+  <input type = "text" id = "search" placeholder = "Search animal...">
 
+  <!-- The dropdown filters for the category. -->
   <select id="categoryFilter">
     <option value = "all">All Categories</option>
     <option value = "Mammal">Mammal</option>
@@ -31,35 +34,41 @@
     <option value = "Fish">Fish</option>
   </select>
 
-  <select id="dietFilter">
-    <option value="all">All Diets</option>
-    <option value="Carnivore">Carnivore</option>
-    <option value="Herbivore">Herbivore</option>
+  <!-- The dropdown filters for the diet. -->
+  <select id = "dietFilter">
+    <option value = "all">All Diets</option>
+    <option value = "Carnivore">Carnivore</option>
+    <option value = "Herbivore">Herbivore</option>
   </select>
 
-  <select id="habitatFilter">
-    <option value="all">All Habitats</option>
-    <option value="Savannah">Savannah</option>
-    <option value="Forest">Forest</option>
-    <option value="Mountains">Mountains</option>
-    <option value="Jungle">Jungle</option>
+
+  <!-- The dropdown filters for the habitat. -->
+  <select id = "habitatFilter">
+    <option value = "all">All Habitats</option>
+    <option value = "Savannah">Savannah</option>
+    <option value = "Forest">Forest</option>
+    <option value = "Mountains">Mountains</option>
+    <option value = "Jungle">Jungle</option>
+    <option value = "Water">Water</option></option>
   </select>
 </div>
 
+<!-- The container where the animal cards will be displayed. -->
 <div class="container" id="animalContainer"></div>
 
-<div class="details" id="detailsBox">
-  <div class="details-content">
-    <span class="close" onclick="closeDetails()">✖</span>
-    <h2 id="detailName"></h2>
-    <p><strong>Category:</strong> <span id="detailCategory"></span></p>
-    <p><strong>Habitat:</strong> <span id="detailHabitat"></span></p>
-    <p><strong>Diet:</strong> <span id="detailDiet"></span></p>
+<!-- The details box that appears when an animal card is clicked. -->
+<div class = "details" id = "detailsBox">
+  <div class = "details-content">
+    <span class = "close" onclick = "closeDetails()">✖</span>
+    <h2 id = "detailName"></h2>
+    <p><strong>Category:</strong> <span id = "detailCategory"></span></p>
+    <p><strong>Habitat:</strong> <span id = "detailHabitat"></span></p>
+    <p><strong>Diet:</strong> <span id = "detailDiet"></span></p>
   </div>
 </div>
 
 <div id = "footer-placeholder"></div>
-<script src="component.js"></script>
-<script src="searchFinder.js"></script>
+<script src = "component.js"></script>
+<script src = "searchFinder.js"></script>
 </body>
 </html>

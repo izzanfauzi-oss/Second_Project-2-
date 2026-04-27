@@ -2,31 +2,32 @@ const animals = [
   { name: "Lion", category: "Mammal", habitat: "Savannah", diet: "Carnivore" },
   { name: "Elephant", category: "Mammal", habitat: "Forest", diet: "Herbivore" },
   { name: "Eagle", category: "Bird", habitat: "Mountains", diet: "Carnivore" },
-  { name: "Snake", category: "Reptile", habitat: "Jungle", diet: "Carnivore" }
+  { name: "Snake", category: "Reptile", habitat: "Jungle", diet: "Carnivore" },
+  { name: "Turtle", category: "Reptile", habitat: "Water", diet: "Herbivore"},
+  { name: "Chameleon", category: "Reptile", habitat: "Forest", diet: "Carnivore"},
+  { name: "Crocodile", category: "Reptile", habitat: "Water", diet: "Carnivore"}
 ];
 
 const container = document.getElementById("animalContainer");
 const searchInput = document.getElementById("search");
 const categoryFilter = document.getElementById("categoryFilter");
-
-// Add these two new lines:
 const dietFilter = document.getElementById("dietFilter");
 const habitatFilter = document.getElementById("habitatFilter");
 
 function displayAnimals(list) {
-  container.innerHTML = "";
+  container.innerHTML = ""; // Clear previous results
   list.forEach(animal => {
-    const card = document.createElement("div");
+    const card = document.createElement("div");// Create a card for each animal
     card.className = "card";
-    card.innerHTML = `<h3>${animal.name}</h3><p>${animal.category}</p>`;
+    card.innerHTML = `<h3>${animal.name}</h3><p>${animal.category}</p>`;// Add the animal's name & category to the card
 
-    card.onclick = () => showDetails(animal);
+    card.onclick = () => showDetails(animal);// Show the details when the card is clicked
 
-    container.appendChild(card);
+    container.appendChild(card);// Add the card to the container
   });
 }
 
-function showDetails(animal) {
+function showDetails(animal) {// Populate the details box with the animal's information
   document.getElementById("detailName").innerText = animal.name;
   document.getElementById("detailCategory").innerText = animal.category;
   document.getElementById("detailHabitat").innerText = animal.habitat;
@@ -62,10 +63,8 @@ function filterAnimals() {
   displayAnimals(filtered);
 }
 
-searchInput.addEventListener("change", filterAnimals);
+searchInput.addEventListener("input", filterAnimals);
 categoryFilter.addEventListener("change", filterAnimals);
-
-// Add these two new lines:
 dietFilter.addEventListener("change", filterAnimals);
 habitatFilter.addEventListener("change", filterAnimals);
 
