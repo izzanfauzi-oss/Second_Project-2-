@@ -5,7 +5,6 @@ body {
   overflow: hidden; /* Lock scrolling initially */
 }
 
-/* Add this utility class right below the body rule */
 .allow-scroll {
   overflow: auto; 
 }

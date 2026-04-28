@@ -56,7 +56,7 @@ function filterAnimals() {
     const matchDiet = dietValue === "all" || animal.diet === dietValue;
     const matchHabitat = habitatValue === "all" || animal.habitat === habitatValue;
 
-    // 3. ONLY return the animal if it matches ALL the active filters!
+    // 3. ONLY return the animal if it matches ALL the active filters
     return matchName && matchCategory && matchDiet && matchHabitat;
   });
 
