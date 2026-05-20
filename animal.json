@@ -32,7 +32,7 @@
     "longitude": 30.817223
   },
   { 
-    "name": "Eagle", "category": "Bird", "habitat": "Mountains", "diet": "Carnivore", 
+    "name": "Eagle", "category": "Bird", "habitat": "Forest", "diet": "Carnivore", 
     "scientific_name": "Aquila chrysaetos",
     "type_of_species": "Bald Eagle, Golden Eagle, Harpy Eagle, Philippine Eagle",
     "image": 
