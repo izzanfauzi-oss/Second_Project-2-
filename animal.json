@@ -1,68 +1,238 @@
 [
   { 
-    "name": "Lion🦁", "category": "Mammal", "habitat": "Savannah", "diet": "Carnivore", 
-    "image": "image/animals/lion.jpeg", 
-    "fact": "Lions are the most social of all big cats and live together in groups called prides." 
+    "name": "Lion", "category": "Mammal", "habitat": "Savannah", "diet": "Carnivore", 
+    "scientific_name": "Panthera leo",
+    "type_of_species": "Asiatic Lion, African Lion, Barbary Lion, Scarface, Simba",
+    "image": 
+    [
+      "image/animals/lion.jpeg",
+      "image/animals/lion2.jpeg",
+      "image/animals/lion3.jpeg"
+    ],
+    "audio": "audio/lion.mp3",
+    "fact": "Lions are the most social of all big cats and live together in groups called prides.",
+    "latitude": 3.286389,
+    "longitude": 40.817223 
   },
   { 
-    "name": "Elephant🐘", "category": "Mammal", "habitat": "Forest", "diet": "Herbivore", 
-    "image": "image/animals/elephant.jpeg", 
-    "fact": "Elephants can communicate using low-frequency sounds that humans cannot hear." 
+    "name": "Elephant", "category": "Mammal", "habitat": "Forest", "diet": "Herbivore", 
+    "scientific_name": "Loxodonta africana",
+    "type_of_species": "African Savanna Elephant, African Forest Elephant, Asian Elephant",
+    "image": 
+  [
+      "image/animals/elephant.jpeg",
+      "image/animals/elephant2.jpeg",
+      "image/animals/elephant3.jpeg",
+      "image/animals/elephant4.jpeg",
+      "image/animals/elephant5.jpeg"
+  ],
+    "audio": "audio/elephant.mp3",
+    "fact": "Elephants can communicate using low-frequency sounds that humans cannot hear.",
+    "latitude": -3.286389,
+    "longitude": 30.817223
   },
   { 
-    "name": "Eagle🦅", "category": "Bird", "habitat": "Mountains", "diet": "Carnivore", 
-    "image": "image/animals/eagle.jpeg", 
-    "fact": "An eagle's eyesight is up to 8 times stronger than a human's." 
+    "name": "Eagle", "category": "Bird", "habitat": "Forest", "diet": "Carnivore", 
+    "scientific_name": "Aquila chrysaetos",
+    "type_of_species": "Bald Eagle, Golden Eagle, Harpy Eagle, Philippine Eagle",
+    "image": 
+    [
+      "image/animals/eagle.jpeg",
+      "image/animals/eagle2.jpeg",
+      "image/animals/eagle3.jpeg",
+      "image/animals/eagle4.jpeg"
+    ],
+    "audio": "audio/eagle.mp3",
+    "fact": "An eagle's eyesight is up to 8 times stronger than a human's.",
+    "latitude": 39.1173,
+    "longitude": -106.4453
   },
-  { "name": "Snake🐍", "category": "Reptile", "habitat": "Jungle", "diet": "Carnivore",
-    "image": "image/animals/snake.jpeg",
-    "fact": "Snake use their forked tongue to smell the air and detect prey or predators."
+
+  { "name": "Snake", "category": "Reptile", "habitat": "Jungle", "diet": "Carnivore",
+    "scientific_name": "Serpentes",
+    "type_of_species": "Python, Cobra, Rattlesnake, Boa Constrictor",
+    "image": 
+    [
+      "image/animals/snake.jpeg",
+      "image/animals/snake2.jpeg",
+      "image/animals/snake3.jpeg",
+      "image/animals/snake4.jpeg",
+      "image/animals/snake5.jpeg"
+    ],
+    "audio": "audio/snake.mp3",
+    "fact": "Snake use their forked tongue to smell the air and detect prey or predators.",
+    "latitude": 22.4653,
+    "longitude": -83.2159
   },
   {
-    "name": "Shark🦈", "category": "Fish", "habitat": "Water", "diet": "Carnivore",
-    "image": "image/animals/shark.jpeg",
-    "fact": "Shark are ancient, diverse predators that have exist for over 450 million years."
+    "name": "Shark", "category": "Fish", "habitat": "Water", "diet": "Carnivore",
+    "scientific_name": "Carcharhinus",
+    "type_of_species": "Great White Shark, Hammerhead Shark, Tiger Shark, Bull Shark, Whale Shark",
+    "image": 
+    [
+      "image/animals/shark.jpeg",
+      "image/animals/sharkm.jpeg",
+      "image/animals/shark3.jpeg",
+      "image/animals/shark4.jpeg",
+      "image/animals/sharkw.jpeg"
+    ],
+    "audio": "audio/shark.mp3",
+    "fact": "Shark are ancient, diverse predators that have exist for over 450 million years.",
+    "latitude": -18.2871,
+    "longitude": 160.6992
   },
-  { "name": "Turtle🐢", "category": "Reptile", "habitat": "Water", "diet": "Herbivore",
-    "image": "image/animals/turtle.jpeg",
-    "fact": "A turtle's shell is actually part of its skeleton, consisting of over 50 bones fused together, including their rib cage and spine."
+  { "name": "Turtle", "category": "Reptile", "habitat": "Water", "diet": "Herbivore",
+    "scientific_name": "Chelonia mydas",
+    "type_of_species": "Green Sea Turtle, Loggerhead Turtle, Leatherback Turtle, Hawksbill Turtle",
+    "image": 
+    [
+      "image/animals/turtle.jpeg",
+      "image/animals/turtle2.jpeg",
+      "image/animals/turtle3.jpeg",
+      "image/animals/turtle4.jpeg"
+    ],
+    "audio": "audio/turtle.mp3",
+    "fact": "A turtle's shell is actually part of its skeleton, consisting of over 50 bones fused together, including their rib cage and spine.",
+    "latitude": -18.2871,
+    "longitude": 147.6992
   },
-  { "name": "Chameleon🦎", "category": "Reptile", "habitat": "Forest", "diet": "Carnivore",
-    "image": "image/animals/chameleon.jpeg",
-    "fact": ". Beyond camouflage, they change color to regulate body temperature and communicate emotions like fear or aggression."
+  { "name": "Chameleon", "category": "Reptile", "habitat": "Forest", "diet": "Carnivore",
+    "scientific_name": "Chamaeleo",
+    "type_of_species": "Panther Chameleon, Veiled Chameleon, Jackson's Chameleon, Furcifer pardalis",
+    "image": 
+    [
+      "image/animals/chameleon.jpeg",
+      "image/animals/chameleon2.jpeg",
+      "image/animals/chameleon3.jpeg",
+      "image/animals/chameleon4.jpeg"
+    ],
+    "audio": "audio/chameleon.mp3",
+    "fact": "Beyond camouflage, they change color to regulate body temperature and communicate emotions like fear or aggression.",
+    "latitude": -18.7669,
+    "longitude": 46.8691
   },
-  { "name": "Crocodile🐊", "category": "Reptile", "habitat": "Water", "diet": "Carnivore",
-    "image": "image/animals/crocodile.jpeg",
-    "fact": "Crocodiles are ancient apex predators that have existed for over 235 million years, outliving the dinosaurs."
+  { "name": "Crocodile", "category": "Reptile", "habitat": "Water", "diet": "Carnivore",
+    "scientific_name": "Crocodylus",
+    "type_of_species": "Nile Crocodile, Saltwater Crocodile, American Crocodile, Mugger Crocodile",
+    "image": 
+    [
+      "image/animals/crocodile.jpeg",
+      "image/animals/crocodile2.jpeg",
+      "image/animals/crocodile3.jpeg",
+      "image/animals/crocodile4.jpeg"
+    ],
+    "audio": "audio/crocodile.mp3",
+    "fact": "Crocodiles are ancient apex predators that have existed for over 235 million years, outliving the dinosaurs.",
+    "latitude": 24.0889,
+    "longitude": 32.8998
   },
-  { "name": "Frog🐸", "category": "Amphibian", "habitat": "Forest", "diet": "Carnivore",
-    "image": "image/animals/frog.jpeg",
-    "fact": "Frogs don' drink water. They absorb it through their skin."
+  { "name": "Frog", "category": "Amphibian", "habitat": "Forest", "diet": "Carnivore",
+    "scientific_name": "Rana temporaria",
+    "type_of_species": "Common Frog, Wood Frog, American Toad",
+    "image": 
+    [
+      "image/animals/frog.jpeg",
+      "image/animals/frog2.jpeg",
+      "image/animals/frog3.jpeg",
+      "image/animals/frog4.jpeg"
+    ],
+    "audio": "audio/frog.mp3",
+    "fact": "Frogs don' drink water. They absorb it through their skin.",
+    "latitude": -20.4653,
+    "longitude": -58.2159
   },
   {
-    "name": "Whale🐋", "category": "Mammal", "habitat": "Water", "diet": "Carnivore",
-    "image": "image/animals/whale.jpeg",
-    "fact": "Whales are the largest animals on Earth, with some species growing up to 100 feet long."
+    "name": "Whale", "category": "Mammal", "habitat": "Water", "diet": "Carnivore",
+    "scientific_name": "Balaenoptera musculus",
+    "type_of_species": "Blue Whale, Beluga Whale, Sperm Whale, Killer Whale, Bowhead Whale, ",
+    "image": 
+    [
+      "image/animals/whale.jpeg",
+      "image/animals/whale2.jpeg",
+      "image/animals/whale3.jpeg",
+      "image/animals/whale4.jpeg",
+      "image/animals/whale5.jpeg"
+    ],
+    "audio": "audio/whale.mp3",
+    "fact": "Whales are the largest animals on Earth, with some species growing up to 100 feet long.",
+    "latitude": -63.3791,
+    "longitude": -89.6821
   },
-  { "name":"Axolotl🦎", "category":"Amphibian", "habitat":"Lakes", "diet":"Carnivore",
-    "image": "image/animals/axolotl.jpeg",
-    "fact": "Axolotl is famous for their extreme regeneration, able to regrow organs throughout their lives."
+  { "name":"Axolotl", "category":"Amphibian", "habitat":"Water", "diet":"Carnivore",
+    "scientific_name": "Ambystoma mexicanum",
+    "type_of_species": "Axolotl, Mexican Walking Fish",
+    "image": 
+    [
+      "image/animals/axolotl.jpeg",
+      "image/animals/axolotl2.jpeg",
+      "image/animals/axolotl3.jpeg",
+      "image/animals/axolotl4.jpeg",
+      "image/animals/axolotl5.jpeg" 
+    ],
+    "audio": "audio/axolotl.mp3",
+    "fact": "Axolotl is famous for their extreme regeneration, able to regrow organs throughout their lives.",
+    "latitude": 19.2881,
+    "longitude": -99.1388
   },
-    { "name":"Hellbender🦎", "category":"Amphibian", "habitat":"Rivers", "diet":"Carnivore",
-    "image": "image/animals/hellbender.jpeg",
-    "fact": "Unlike most salamanders, hellbenders can't regrow their limbs or tails if they are lost."
+    { "name":"Hellbender", "category":"Amphibian", "habitat":"Water", "diet":"Carnivore",
+    "scientific_name": "Cryptobranchus alleganiensis",
+    "type_of_species": "Eastern Hellbender, Ozark Hellbender, Western Hellbender",
+    "image": 
+    [
+      "image/animals/hellbender.jpeg",
+      "image/animals/hellbender2.jpeg",
+      "image/animals/hellbender3.jpeg",
+      "image/animals/hellbender4.jpeg"
+    ],
+    "audio": "audio/hellbender.mp3",
+    "fact": "Unlike most salamanders, hellbenders can't regrow their limbs or tails if they are lost.",
+    "latitude": 35.7596,
+    "longitude": -82.2653
   },
-  { "name":"Owl🦉", "category":"Bird", "habitat":"Forest", "diet":"Carnivore",
-    "image": "image/animals/owl.jpeg",
-    "fact": "Owls are renowned for their specialized, near-silent flight, allowing them to act as stealthy, nocturnal predators."
+  { "name":"Owl", "category":"Bird", "habitat":"Forest", "diet":"Carnivore",
+    "scientific_name": "Strigiformes",
+    "type_of_species": "Barn Owl, Great Horned Owl, Snowy Owl, Eurasian Eagle-Owl",
+    "image": 
+    [
+      "image/animals/owl.jpeg",
+      "image/animals/owl2.jpeg",
+      "image/animals/owl3.jpeg",
+      "image/animals/owl4.jpeg",
+      "image/animals/owl5.jpeg"
+    ],
+    "audio": "audio/owl.mp3",
+    "fact": "Owls are renowned for their specialized, near-silent flight, allowing them to act as stealthy, nocturnal predators.",
+    "latitude": 48.0862,
+    "longitude": 8.2139
   },
-  { "name":"Raven🐦‍⬛", "category":"Bird", "habitat":"Rural farm", "diet":"Omnivore",
-    "image": "image/animals/raven.jpeg",
-    "fact": "Ravens are highly intelligent, playful, and emotionally complex birds that can solve puzzles, mimic human speech, and use gestures to communicate."
+  { "name":"Raven", "category":"Bird", "habitat":"Forest", "diet":"Omnivore",
+    "scientific_name": "Corvus corax",
+    "type_of_species": "Common Raven, Chihuahuan Raven, Thick-billed Raven, Brown-necked Raven",
+    "image": 
+    [
+      "image/animals/raven.jpeg",
+      "image/animals/raven2.jpeg",
+      "image/animals/raven3.jpeg"
+    ],
+    "audio": "audio/raven.mp3",
+    "fact": "Ravens are highly intelligent, playful, and emotionally complex birds that can solve puzzles, mimic human speech, and use gestures to communicate.",
+    "latitude": 57.0771,
+    "longitude": -4.5480
   },
-  { "name":"Parrot🦜", "category":"Bird", "habitat":"Forest", "diet":"Omnivore",
-    "image": "image/animals/parrot.jpeg",
-    "fact": "Parrot have an ability to imitate human speech."
+  { "name":"Parrot", "category":"Bird", "habitat":"Forest", "diet":"Omnivore",
+    "scientific_name": "Psittaciformes",
+    "type_of_species": "African Grey Parrot, Amazon Parrot, Macaw, Cockatoo",
+    "image": 
+    [
+      "image/animals/parrot.jpeg",
+      "image/animals/parrot2.jpeg",
+      "image/animals/parrot3.jpeg",
+      "image/animals/parrot4.jpeg"
+    ],
+    "audio": "audio/parrot.mp3",
+    "fact": "Parrot have an ability to imitate human speech.",
+    "latitude": -3.4653,
+    "longitude": -62.2159
   }
 
 ]

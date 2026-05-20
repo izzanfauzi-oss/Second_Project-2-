@@ -12,24 +12,38 @@ fetch('video.json')
 const videoContainer = document.getElementById("videoContainer");
 const videoSearch = document.getElementById("videoSearch");
 const videoCategoryFilter = document.getElementById("videoCategoryFilter");
+const videoSortOrder = document.getElementById("videoSortOrder");
 
 // 3. Function to display the videos on the screen
 function displayVideos(list) {
-  videoContainer.innerHTML = ""; // Clear the grid
+  videoContainer.innerHTML = ""; // Clear out the old videos
   
+  // 🌟 ADDED: Handles empty search results gracefully
+  if (list.length === 0) {
+    videoContainer.innerHTML = `
+      <div class="no-results-message" style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #7f8c8d;">
+        <h3>No matching videos found 🎥</h3>
+        <p>Try adjusting your search query or changing the category filter!</p>
+      </div>
+    `;
+    return; // Stops the function here so it doesn't try to loop through empty data
+  }
+
+  // If there are results, build the cards normally
   list.forEach(video => {
-    // Create a new card for each video
     const card = document.createElement("div");
     card.className = "video-card";
     
-    // Inject the YouTube iframe and titles
+    // Custom hover hint reading the video's title
+    card.title = `Play educational video: ${video.title}`;
+    
     card.innerHTML = `
-      <iframe src = "${video.url}" title = "${video.title}" allowfullscreen></iframe>
+      <iframe src="${video.url}" title="${video.title}" allowfullscreen></iframe>
       <h3>${video.title}</h3>
-      <p class = "cat-label">Category: ${video.category}</p>
+      <p class="cat-label">Category: ${video.category}</p>
     `;
     
-    videoContainer.appendChild(card);// Add the card to the container
+    videoContainer.appendChild(card);
   });
 }
 
@@ -37,20 +51,32 @@ function displayVideos(list) {
 function filterVideos() {
   const searchValue = videoSearch.value.toLowerCase();
   const categoryValue = videoCategoryFilter.value;
+  
+  // 1. Get the current sort selection
+  const sortValue = videoSortOrder.value;
 
-  const filtered = videos.filter(video => {
-    // Check if the title starts with the search value
-    const matchName = video.title.toLowerCase().startsWith(searchValue);
-    // Check if the category matches the dropdown
+  // 2. Filter the videos based on search and category
+  let filtered = videos.filter(video => {
+    // Note: Adjust 'video.title' if your JSON uses a different key name for the video title
+    const matchName = video.title.toLowerCase().includes(searchValue);
     const matchCategory = categoryValue === "all" || video.category === categoryValue;
-    
     return matchName && matchCategory;
   });
 
-  // Display only the filtered results
+  // 🌟 3. NEW SORTING LOGIC: Reorganize the filtered video array alphabetically
+  if (sortValue === "asc") {
+    // A to Z
+    filtered.sort((a, b) => a.title.localeCompare(b.title));
+  } else if (sortValue === "desc") {
+    // Z to A
+    filtered.sort((a, b) => b.title.localeCompare(a.title));
+  }
+
+  // 4. Display the results
   displayVideos(filtered);
 }
 
 // 5. Tell the inputs to listen for typing and clicking
 videoSearch.addEventListener("input", filterVideos);
 videoCategoryFilter.addEventListener("change", filterVideos);
+if (sortOrder) sortOrder.addEventListener("change", filterVideos);

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Map - Animal Kingdom</title>
+    <link rel="stylesheet" href="background.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <!-- Leaflet CSS (for the map) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        /* Additional styles for the map page */
+        .map-page {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        #animal-map {
+            height: 500px;
+            width: 100%;
+            border-radius: 12px;
+            margin-top: 20px;
+            z-index: 1;
+        }
+        .map-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .map-controls select {
+            padding: 8px 15px;
+            font-size: 1rem;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+            /* Hover effect for map markers */
+    .custom-marker div {
+        transition: transform 0.2s ease;
+        cursor: pointer;
+    }
+    .custom-marker div:hover {
+        transform: scale(1.3);
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🐾 Animal Encyclopedia</h1>
+        <div class="header-nav">
+            <a href="index.html">🏠 Home</a>
+            <a href="encyclopedia.html">🔍 Search Animals</a>
+            <a href="video.html">🎥 Watch Videos</a>
+            <a href="about.html">👥 Meet the Team</a>
+            <a href="map.html" style="background-color: rgba(52, 152, 219, 0.2); border: 1px solid #3498db;">🗺️ Animal Map</a>
+        </div>
+    </header>
+
+    <main class="map-page">
+        <div class="map-controls">
+            <select id="map-category-filter">
+                <option value="all">All Categories</option>
+                <option value="Mammal">Mammal</option>
+                <option value="Bird">Bird</option>
+                <option value="Reptile">Reptile</option>
+                <option value="Amphibian">Amphibian</option>
+                <option value="Fish">Fish</option>
+            </select>
+        </div>
+        <div id="animal-map"></div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="component.js"></script>
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Your map logic -->
+    <script src="map.js"></script>
+</body>
+</html>

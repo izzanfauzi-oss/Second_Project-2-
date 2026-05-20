@@ -1,52 +1,53 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
 <head>
-    <meta charset = "UTF-8">
-    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animal Video</title>
-    <link rel = "stylesheet" href = "background.css">
-    <link rel = "stylesheet" href = "header.css">
-    <link rel = "stylesheet" href = "footer.css">
-    <link rel = "stylesheet" href = "video.css">
+    <link rel="stylesheet" href="background.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="video.css">
 </head>
 <body>
-    <!-- Your modular header -->
+  
   <header>
-    <h1>🐾 Animal Kingdom</h1>
-    <div class = "header-nav">
-      <a href = "index.html">🏠 Home</a>
-      <a href = "encyclopedia.html">🔍 Search Animals</a>
-      <a href = "video.html" style = "background-color: rgba(52, 152, 219, 0.2); border: 1px solid #3498db;">🎥 Watch Videos</a>
-      <a href = "about.html">👥 Meet the Team</a>
-    
+    <h1 title="Animal Kingdom Project">🐾 Animal Kingdom</h1>
+    <div class="header-nav">
+      <a href="index.html" title="Return to the main welcome screen">🏠 Home</a>
+      <a href="encyclopedia.html" title="Explore and filter the interactive animal database">🔍 Search Animals</a>
+      <a href="video.html" class="active-nav" title="Watch educational animal documentaries">🎥 Watch Videos</a>
+      <a href="about.html" title="View the student developers behind this project">👥 Meet the Team</a>
     </div>
   </header>
 
-  <main class = "video-page">
+  <main class="video-page">
     
-    <!-- The new Search & Filter Controls -->
-    <div class = "video-controls">
-      <input type = "text" id = "videoSearch" placeholder = "Search videos...">
+    <div class="video-controls">
+      <input type="text" id="videoSearch" placeholder="Search videos..." title="Type keywords to filter media library items dynamically">
       
-      <select id="videoCategoryFilter">
-        <option value = "all">🗂️ All Categories</option>
-        <option value = "Mammal">🐘 Mammal</option>
-        <option value = "Reptile">🐍 Reptile</option>
-        <option value = "Bird">🕊️ Bird</option>
-        <option value = "Amphibian">🦎 Amphibian</option>
-        <option value = "Fish">🐟 Fish</option>
+      <select id="videoCategoryFilter" title="Filter educational video streaming options by category type">
+        <option value="all">🗂️ All Categories</option>
+        <option value="Mammal">🐘 Mammal</option>
+        <option value="Reptile">🐍 Reptile</option>
+        <option value="Bird">🕊️ Bird</option>
+        <option value="Amphibian">🦎 Amphibian</option>
+        <option value="Fish">🐟 Fish</option>
+      </select>
+
+      <select id="videoSortOrder" title="Rearrange the video cards in alphabetical order">
+        <option value="none">↕️ Sort: Default</option>
+        <option value="asc">🔤 Title: A to Z</option>
+        <option value="desc">🔤 Title: Z to A</option>
       </select>
     </div>
 
-    <!-- The empty container where JavaScript will put the videos -->
-    <div class = "video-grid" id = "videoContainer"></div>
+    <div class="video-grid" id="videoContainer"></div>
 
   </main>
 
-  <div id = "footer-placeholder"></div>
-  <script src = "component.js"></script>
-  
-  <!-- Add this new script tag at the bottom! -->
-  <script src = "video.js"></script>
+  <div id="footer-placeholder"></div>
+  <script src="component.js"></script>
+  <script src="video.js"></script>
 </body>
 </html>

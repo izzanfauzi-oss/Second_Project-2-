@@ -1,37 +1,32 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
 <head>
-  <meta charset = "UTF-8">
-  <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome - Animal Kingdom</title>
-  
-  <!-- Link directly to your brand new CSS file! -->
-  <link rel = "stylesheet" href = "index.css">
+  <link rel="stylesheet" href="index.css">
 </head>
 <body> 
 
-  <div id = "intro-overlay">
+  <div id="intro-overlay">
     <h1>Welcome to the Animal Kingdom! 🐾</h1>
     <p>Discover the amazing world of animals.</p>
     
-    <!-- A wrapper for the buttons -->
-    <div class = "button-group"> 
-    
-    <!-- Primary Button -->
-    <button class = "enter-btn" onclick = "window.location.href = 'encyclopedia.html'">
-      📕 Enter Encyclopedia
-    </button>
+    <div class="button-group"> 
+      <button class="enter-btn" title="Open the main animal directory to search and filter species" onclick="window.location.href='encyclopedia.html'">
+        📕 Enter Encyclopedia
+      </button>
 
-    <button class = "enter-btn" onClick = "window.location.href = 'video.html'">
-      📽️ Watch Videos
-    </button>
+      <button class="enter-btn" title="Browse the educational video library" onClick="window.location.href='video.html'">
+        📽️ Watch Videos
+      </button>
 
-    <button class = "enter-btn" onClick = "window.location.href = 'about.html'">
-      🧑‍🎓 Meet The Team
-    </button>
-
+      <button class="enter-btn" title="Learn more about the project team members" onClick="window.location.href='about.html'">
+        🧑‍🎓 Meet The Team
+      </button>
     </div>
-</div>
+  </div>
 
+  <script src="component.js"></script>
 </body>
 </html>

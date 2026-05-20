@@ -1,8 +1,9 @@
 /* --- Global Header Styles (header.css) --- */
 header {
-
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   background-color: rgba(20, 30, 20, 0.65); 
-  margin-top: auto; 
   color: white;
   padding: 20px 40px;
   text-align: center;
@@ -10,7 +11,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px; 
+  gap: 10px;
 }
 
 header h1 {
@@ -49,16 +50,23 @@ header h1 {
 /* --- Mobile Styles for Header --- */
 @media (max-width: 768px) {
   header h1 {
-    font-size: 1.8rem; /* Shrink the header title slightly */
+    font-size: 1.8rem; 
   }
   
   .header-nav {
-    flex-wrap: wrap; /* Allows the buttons to stack on top of each other */
+    flex-wrap: wrap; 
     justify-content: center;
   }
   
   .header-nav a {
-    padding: 8px 12px; /* Make the buttons slightly smaller to fit better */
+    padding: 8px 12px; 
     font-size: 0.9rem;
   }
+}
+
+/* 🌟 FIXED: Active Navigation State now matches the new solid hover color */
+.active-nav {
+  background-color: #3498db !important;
+  border: 1px solid #2980b9 !important;
+  color: white !important;
 }

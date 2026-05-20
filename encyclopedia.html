@@ -1,80 +1,102 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
 <head>
-  <meta charset = "UTF-8">
-  <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Animal Encyclopedia</title>
-  <link rel = "stylesheet" href = "background.css">
-  <link rel = "stylesheet" href = "footer.css">
-  <link rel = "stylesheet" href = "header.css">
-</head>
-
-<header>
-  <h1>🐾 Animal Kingdom</h1>
+  <link rel="stylesheet" href="background.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="header.css">
   
-  <!-- This new div is what makes the buttons look cool! -->
-  <div class = "header-nav">
-    <a href = "index.html">🏠 Home</a>
-    <a href = "encyclopedia.html" style="background-color: rgba(52, 152, 219, 0.2); border: 1px solid #3498db;">🔍 Search Animals</a>
-    <a href = "video.html">🎥 Watch Videos</a>
-    <a href = "about.html">👥 Meet the Team</a>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+
+  <header>
+    <h1 title="Animal Kingdom Project">🐾 Animal Kingdom</h1>
+    <div class="header-nav">
+      <a href="index.html" title="Return to the main welcome screen">🏠 Home</a>
+      <a href="encyclopedia.html" class="active-nav" title="Explore and filter the interactive animal database">🔍 Search Animals</a>
+      <a href="video.html" title="Watch educational animal documentaries">🎥 Watch Videos</a>
+      <a href="about.html" title="View the student developers behind this project">👥 Meet the Team</a>
+    </div>
+  </header>
+
+  <div class="controls">
+    <input type="text" id="search" placeholder="Search animal..." title="Type an animal name to filter the results instantly">
+
+    <select id="categoryFilter" title="Filter animals by their biological classification group">
+      <option value="all">🗂️ All Categories</option>
+      <option value="Mammal">🐘 Mammal</option>
+      <option value="Bird">🕊️ Bird</option>
+      <option value="Reptile">🐍 Reptile</option>
+      <option value="Amphibian">🐸 Amphibian</option>
+      <option value="Fish">🐟 Fish</option>
+    </select>
+
+    <select id="dietFilter" title="Filter animals by what they consume">
+      <option value="all">🍽️ All Diets</option>
+      <option value="Carnivore">🥩 Carnivore</option>
+      <option value="Herbivore">🍀 Herbivore</option>
+      <option value="Omnivore">🍗🌿 Omnivore</option>
+    </select>
+
+    <select id="habitatFilter" title="Filter animals by their native environment ecosystem">
+      <option value="all">🏡 All Habitats</option>
+      <option value="Savannah">🏜️ Savannah</option>
+      <option value="Forest">🌲 Forest</option>
+      <option value="Jungle">🌳 Jungle</option>
+      <option value="Water">🌊 Water</option>
+    </select>
+
+    <select id="sortOrder" title="Rearrange the animal cards in alphabetical order">
+      <option value="none">↕️ Sort: Default</option>
+      <option value="asc">🔤 Name: A to Z</option>
+      <option value="desc">🔤 Name: Z to A</option>
+    </select>
   </div>
-</header>
 
-<!-- The controls for searching and filtering the animals. -->
-<div class = "controls">
-  <input type = "text" id = "search" placeholder = "Search animal...">
+  <div class="container" id="animalContainer"></div>
 
-  <!-- The dropdown filters for the category. -->
-  <select id = "categoryFilter">
-    <option value = "all">🗂️ All Categories</option>
-    <option value = "Mammal">🐘 Mammal</option>
-    <option value = "Bird">🕊️ Bird</option>
-    <option value = "Reptile">🐍 Reptile</option>
-    <option value = "Amphibian">🐸 Amphibian</option>
-    <option value = "Fish">🐟 Fish</option>
-  </select>
+  <div class="details" id="detailsBox">
+    <div class="details-content details-split">
+      <span class="close" onclick="closeDetails()" title="Close details">✖</span>
+      
+      <div class="details-left">
+        
+        <div class="image-carousel">
+          <button id="prevImageBtn" class="carousel-btn" title="View previous image" onclick="changeImage(-1)">&#10094;</button>
+          <img id="detailImage" src="" alt="Animal Image">
+          <button id="nextImageBtn" class="carousel-btn" title="View next image" onclick="changeImage(1)">&#10095;</button>
+        </div>
 
-  <!-- The dropdown filters for the diet. -->
-  <select id = "dietFilter">
-    <option value = "all">🍽️ All Diets</option>
-    <option value = "Carnivore">🥩 Carnivore</option>
-    <option value = "Herbivore">🍀 Herbivore</option>
-    <option value = "Omnivore">🍗🌿 Omnivore</option>
-  </select>
+        <h2 id="detailName"></h2>
+        
+        <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+          <button id="playSoundBtn" class="sound-btn" title="Listen to the animal's natural sound">🔊 Play Sound</button>
+          <button id="showMapBtn" class="sound-btn map-btn" title="View wildlife range map">🗺️ Show Map</button>
+        </div>
 
+        <p><strong>Category:</strong> <span id="detailCategory"></span></p>
+        <p><strong>Habitat:</strong> <span id="detailHabitat"></span></p>
+        <p><strong>Diet:</strong> <span id="detailDiet"></span></p>
+        <p><strong>Fun Fact:</strong> <span id="detailFact"></span></p>
+        <p><strong>Scientific Name:</strong> <span id="detailScientific"></span></p>
+        <p><strong>Type of Species:</strong> <span id="detailSpecies"></span></p>
+      </div>
+      
+      <div class="details-right" id="detailsMapPanel" style="display: none;">
+        <h3>📍 Location</h3>
+        <div id="miniMap" style="height: 250px; width: 100%; border-radius: 8px; border: 2px solid lightsteelblue;"></div>
+        <p id="mapLocationName" style="margin-top: 8px; font-size: 0.85rem; font-style: italic; color: #555;"></p>
+      </div>
 
-  <!-- The dropdown filters for the habitat. -->
-  <select id = "habitatFilter">
-    <option value = "all">🏡All Habitats</option>
-    <option value = "Savannah">🏜️Savannah</option>
-    <option value = "Forest">🌲Forest</option>
-    <option value = "Jungle">🌳Jungle</option>
-    <option value = "Water">🌊Water</option>
-  </select>
-</div>
-
-<!-- The container where the animal cards will be displayed. -->
-<div class = "container" id = "animalContainer"></div>
-
-<!-- The details box that appears when an animal card is clicked. -->
-<div class = "details" id = "detailsBox">
-  <div class = "details-content">
-    <span class = "close" onclick = "closeDetails()">✖</span>
-    
-    <!-- The Image will appear here ONLY when the pop-up opens! -->
-    <img id = "detailImage" src = "" alt = "Animal Image" style = "width: 100%; border-radius: 8px; margin-bottom: 15px; max-height: 250px; object-fit: cover;">
-
-    <h2 id = "detailName"></h2>
-    <p><strong>Category:</strong> <span id = "detailCategory"></span></p>
-    <p><strong>Habitat:</strong> <span id = "detailHabitat"></span></p>
-    <p><strong>Diet:</strong> <span id = "detailDiet"></span></p>
-    <p><strong>Fun Fact:</strong> <span id = "detailFact"></span></p>
+    </div>
   </div>
-</div>
 
-<div id = "footer-placeholder"></div>
-<script src = "component.js"></script>
-<script src = "encyclopedia.js"></script>
+  <div id="footer-placeholder"></div>
+  <script src="component.js"></script>
+  <script src="encyclopedia.js"></script>
 </body>
 </html>

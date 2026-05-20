@@ -1,6 +1,5 @@
-/* --- Welcome Screen Styles (welcome.css) --- */
+/* --- Welcome Screen Styles (index.css) --- */
 
-/* 1. Set the background image for the entire page */
 body {
   background-image: url('image/background/index-background.jpeg');
   background-size: cover;
@@ -10,7 +9,6 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* 2. Center everything perfectly on the screen */
 #intro-overlay {
   height: 100vh;
   display: flex;
@@ -24,7 +22,7 @@ body {
 #intro-overlay h1 {
   font-size: 3.5rem;
   margin-bottom: 1rem;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8); /* Adds readability */
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8); 
 }
 
 #intro-overlay p {
@@ -35,10 +33,9 @@ body {
 
 .button-group {
   display: flex;
-  gap: 15px; /* Spreads your three buttons out neatly */
+  gap: 15px; 
 }
 
-/* Styled with an organic forest green */
 .enter-btn {
   padding: 15px 30px;
   font-size: 1.1rem;
@@ -55,4 +52,12 @@ body {
 .enter-btn:hover {
   background-color: #1e8449; 
   transform: scale(1.05);
+}
+
+/* ==========================================================================
+   Inclusive Accessibility Features (Main Page Settings)
+   ========================================================================== */
+
+.grayscale {
+  filter: grayscale(100%) !important;
 }
